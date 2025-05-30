@@ -98,6 +98,11 @@ sudo docker-compose exec web python manage.py migrate
 
 ## 🔌 API Endpoints (`loan/urls.py`)
 
+All endpoints are prefixed with <b>/api</b>.
+</br>
+Example: POST <b>/api/register</b> instead of just /register.
+
+
 | Endpoint                    | Method | Description                                         |
 | --------------------------- | ------ | --------------------------------------------------- |
 | `/trigger-ingestion`        | POST   | Trigger Celery task to ingest data from Excel files |
@@ -160,13 +165,13 @@ Collected to:
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ```
 
-Use `python manage.py collectstatic` (optional in production).
+Use `python manage.py collectstatic` 
 
 ---
 
 ## 🔃 Summary
 
-* Django for the backend logic and REST APIs  
+* Django and DjangoRESTframework for the backend logic and REST APIs  
 * PostgreSQL for relational data storage  
 * Celery + Redis for background ingestion of Excel data  
 * Docker for seamless containerization  
