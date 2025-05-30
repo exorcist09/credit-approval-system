@@ -1,5 +1,6 @@
-# Credit Approval System 
-#### ---> Made with Django + Django Rest Framework + Docker + Postgres
+# 🪙 Credit Approval System
+
+####  <b>Built with Django, Django REST Framework, Docker, PostgreSQL, Celery & Redis</b>
 
 A backend system built using <b>Django, Django REST Framework, Celery, Redis, and PostgreSQL </b>that automates the ingestion of customer and loan data from Excel files, registers new customers, checks credit eligibility, and manages loans.
 
