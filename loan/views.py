@@ -4,6 +4,12 @@ from rest_framework import status
 from .serializers import RegisterCustomerSerializer, RegisteredCustomerResponseSerializer, CheckEligibilityRequestSerializer,CreateLoanRequestSerializer,CreateLoanResponseSerializer,CustomerLoanSerializer
 from .models import Customer, Loan
 from datetime import datetime,timedelta
+from .tasks import ingest_excel_data
+
+class TriggerIngestionView(APIView):
+    def post(self, request):
+        ingest_excel_data.delay()
+        return Response({"message": "Ingestion started in background"}, status=202)
 
 
 # Register Controller

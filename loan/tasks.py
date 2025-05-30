@@ -1,12 +1,13 @@
-# loan/ingestion.py
-
+# loan/tasks.py
 import pandas as pd
-from .models import Customer, Loan
 from datetime import datetime
+from celery import shared_task
+from .models import Customer, Loan
 
+@shared_task
 def ingest_excel_data():
-    customer_df = pd.read_excel('customer_data.xlsx')
-    loan_df = pd.read_excel('loan_data.xlsx')
+    customer_df = pd.read_excel('/app/customer_data.xlsx')
+    loan_df = pd.read_excel('/app/loan_data.xlsx')
 
     for _, row in customer_df.iterrows():
         Customer.objects.update_or_create(

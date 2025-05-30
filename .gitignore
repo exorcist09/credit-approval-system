@@ -1,22 +1,28 @@
-# Python
+# .gitignore
+
+# Byte-compiled / cache
 __pycache__/
 *.py[cod]
-*.log
+*.sqlite3
 
-# Django
-*.pyc
-db.sqlite3  # Not used in your case but common
-
-# PostgreSQL settings (just in case)
-*.pgdata/
-*.pgsql/
-*.dump
-
-# Virtual environment
+# Virtual environments
 .venv/
+env/
 
-# Environment variables / Secrets
-.env
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.mo
+*.db
+*.sqlite3
 
-# VS Code settings
+# IDEs
 .vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Docker
+*.pid
